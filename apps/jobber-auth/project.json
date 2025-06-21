@@ -1,7 +1,7 @@
 {
-  "name": "nest-microservices",
+  "name": "jobber-auth",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nest-microservices/src",
+  "sourceRoot": "apps/jobber-auth/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -23,15 +23,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "nest-microservices:build",
+        "buildTarget": "jobber-auth:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "nest-microservices:build:development"
+          "buildTarget": "jobber-auth:build:development"
         },
         "production": {
-          "buildTarget": "nest-microservices:build:production"
+          "buildTarget": "jobber-auth:build:production"
         }
       }
     },

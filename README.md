@@ -16,19 +16,19 @@
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve nest-microservices
+npx nx serve jobber-auth
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build nest-microservices
+npx nx build jobber-auth
 ```
 
 To see all available targets to run for a project, run:
 
 ```sh
-npx nx show project nest-microservices
+npx nx show project jobber-auth
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
