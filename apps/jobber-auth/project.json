@@ -6,7 +6,10 @@
   "tags": [],
   "targets": {
     "build": {
-     "dependsOn": ["generate-types"]
+      "dependsOn": ["generate-types"]
+    },
+    "test": {
+      "dependsOn": ["generate-types"]
     },
     "serve": {
       "continuous": true,
