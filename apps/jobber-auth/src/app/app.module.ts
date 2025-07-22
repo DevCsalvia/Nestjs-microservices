@@ -13,6 +13,7 @@ import { AuthResolver } from './auth/auth.resolver';
     PrismaModule,
     GraphQLModule.forRoot({
       driver: ApolloDriver,
+      context: ({ req, res }) => ({ req, res }),
       autoSchemaFile: true,
     }),
     UsersModule,

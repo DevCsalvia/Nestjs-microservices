@@ -9,6 +9,9 @@
       "dependsOn": ["generate-types"]
     },
     "test": {
+      "options": {
+        "passWithNoTests": true
+      },
       "dependsOn": ["generate-types"]
     },
     "serve": {
@@ -27,11 +30,6 @@
         "production": {
           "buildTarget": "jobber-auth:build:production"
         }
-      }
-    },
-    "test": {
-      "options": {
-        "passWithNoTests": true
       }
     },
     "generate-types": {
