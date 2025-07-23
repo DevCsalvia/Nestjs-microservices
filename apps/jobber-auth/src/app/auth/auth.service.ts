@@ -32,11 +32,13 @@ export class AuthService {
       secure: this.configService.get('NODE_ENV') === 'production',
       expires,
     });
+
+    return user;
   }
   private async verifyUser(email: string, password: string) {
     try {
       const user = await this.usersService.getUser({ email });
-      const authenticated = await compare(user.password, password);
+      const authenticated = await compare(password, user.password);
       if (!authenticated) {
         throw new UnauthorizedException();
       }
