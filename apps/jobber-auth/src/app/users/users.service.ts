@@ -8,7 +8,7 @@ export class UsersService {
   constructor(private readonly prismaService: PrismaService) {}
 
   async createUser(data: Prisma.UserCreateInput) {
-    await this.prismaService.user.deleteMany();
+    console.log(data);
     return this.prismaService.user.create({
       data: {
         ...data,
