@@ -1,20 +1,9 @@
-const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
+const { merge } = require('webpack-merge');
+const CommonConfig = require('../../webpack.lib.config');
 const { join } = require('path');
 
-module.exports = {
+module.exports = merge(CommonConfig, {
   output: {
     path: join(__dirname, '../../dist/libs/nestjs'),
-    libraryTarget: 'commonjs2',
   },
-  plugins: [
-    new NxAppWebpackPlugin({
-      target: 'node',
-      compiler: 'tsc',
-      main: './src/index.ts',
-      tsConfig: './tsconfig.lib.json',
-      optimization: false,
-      outputHashing: 'none',
-      generatePackageJson: true,
-    }),
-  ],
-};
+});

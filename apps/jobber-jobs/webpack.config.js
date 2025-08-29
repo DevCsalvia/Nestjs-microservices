@@ -1,20 +1,9 @@
-const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
+const { merge } = require('webpack-merge');
+const CommonConfig = require('../../webpack.app.config');
 const { join } = require('path');
 
-module.exports = {
+module.exports = merge(CommonConfig, {
   output: {
     path: join(__dirname, '../../dist/apps/jobber-jobs'),
   },
-  plugins: [
-    new NxAppWebpackPlugin({
-      target: 'node',
-      compiler: 'tsc',
-      main: './src/main.ts',
-      tsConfig: './tsconfig.app.json',
-      assets: ['./src/assets'],
-      optimization: false,
-      outputHashing: 'none',
-      generatePackageJson: true,
-    }),
-  ],
-};
+});
