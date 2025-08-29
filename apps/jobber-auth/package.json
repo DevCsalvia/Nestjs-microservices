@@ -1,0 +1,9 @@
+{
+  "name": "jobber-auth",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

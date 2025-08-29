@@ -3,14 +3,15 @@ const { join } = require('path');
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/jobber-executor'),
+    path: join(__dirname, '../../dist/libs/pulsar'),
+    libraryTarget: 'commonjs2',
   },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
       compiler: 'tsc',
-      main: './src/main.ts',
-      tsConfig: './tsconfig.app.json',
+      main: './src/index.ts',
+      tsConfig: './tsconfig.lib.json',
       optimization: false,
       outputHashing: 'none',
       generatePackageJson: true,
