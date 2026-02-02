@@ -16,6 +16,8 @@ COPY libs/grpc ./libs/grpc
 COPY libs/nestjs ./libs/nestjs
 COPY libs/prisma ./libs/prisma
 
+RUN apt-get update && apt-get install -y openssl
+
 RUN npm install
 
 RUN npx nx build jobber-auth
@@ -23,6 +25,8 @@ RUN npx nx build jobber-auth
 FROM node:22-slim as runner
 
 WORKDIR /app
+
+RUN apt-get update && apt-get install -y openssl
 
 COPY --from=builder /workspace/package.json ./
 COPY --from=builder /workspace/apps/jobber-auth/package.json ./apps/jobber-auth/package.json

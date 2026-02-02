@@ -1,0 +1,16 @@
+{{- if .Values.jobs.enabled }}
+appVersion: v1
+kind: Service
+metadata:
+  name: jobs
+  label:
+    app: jobs
+spec:
+  type: ClusterIP
+  selector:
+    app: jobs
+  ports:
+    - protocol: TCP
+      port: {{ .Values.jobs.port }}
+      targetPort: {{ .Values.jobs.port }}
+{{- end}}
